@@ -1,10 +1,14 @@
 import java.util.ArrayList;
 
-public class Combo implements OrderItem{
+public class Combo extends Product implements OrderItem{
 
    ArrayList<OrderItem> item = new ArrayList<OrderItem>();
 
-   void Additem(OrderItem newItem) {
+    public Combo(String itemName, double price) {
+        super(itemName, price);
+    }
+
+    void Additem(OrderItem newItem) {
     item.add(newItem);
     }
 
