@@ -24,6 +24,8 @@ public class OrderView extends JPanel{
         CCombo1 = new JCheckBox();
         CCombo2 = new JCheckBox();
         selectedCheckBox = new JCheckBox();
+        Badd = new JButton();
+        Bclear = new JButton();
 
         setLayout(new BorderLayout());
         orderText = new JTextArea(10,20);
@@ -71,6 +73,18 @@ public class OrderView extends JPanel{
             }
         });
 
+        Badd.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            }
+        });
+
+        Bclear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            }
+        });
+
         //OrderController.add
         //OrderController.Clear
 
@@ -81,8 +95,8 @@ public class OrderView extends JPanel{
         CCombo1.setText("Combo #1");
         CCombo2.setText("Combo #2");
 
-        //Badd.setText("Add");
-        //Bclear.setText("Clear");
+        Badd.setText("Add");
+        Bclear.setText("Clear");
 
         JPanel panel1 = new JPanel();
         add(panel1, BorderLayout.CENTER);
@@ -95,8 +109,8 @@ public class OrderView extends JPanel{
 
         JPanel panel2 = new JPanel();
         add(panel2, BorderLayout.SOUTH);
-        //panel2.add(Badd);
-        //panel2.add(Bclear);
+        panel2.add(Badd);
+        panel2.add(Bclear);
 
 
     }
