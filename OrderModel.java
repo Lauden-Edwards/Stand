@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 
 public class OrderModel {
+
+    int TOTAL;
     private double total;
     ArrayList<OrderItem> Order = new ArrayList<OrderItem>();
 
