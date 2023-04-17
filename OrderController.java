@@ -6,11 +6,15 @@ public class OrderController {
     public OrderController(OrderModel orderModel, OrderView orderView) {
         this.orderModel = orderModel;
         this.orderView = orderView;
+        orderView.setController(this);
     }
 
-    public void additem(OrderItem orderItem) {
+    public String additem(OrderItem orderItem) {
+        orderModel.Additem(orderItem);
+        return orderModel.toString();
 
     }
+
 
     //public void clear
 }

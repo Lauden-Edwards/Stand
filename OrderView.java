@@ -16,6 +16,12 @@ public class OrderView extends JPanel{
     JCheckBox CCombo2;
     JButton Badd;
     JButton Bclear;
+
+    OrderController OC;
+
+    public void setController(OrderController OC2) {
+        this.OC = OC2;
+    }
     public OrderView() {
         CHamburger = new JCheckBox();
         CChicken = new JCheckBox();
@@ -76,6 +82,10 @@ public class OrderView extends JPanel{
         Badd.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String selected = selectedCheckBox.getText();
+                Product p = new Product(selected.substring(0, selected.length() -2), Double.parseDouble(selected.substring(selected.length()-1)));
+                String S = OC.additem(p);
+                orderText.setText(S);
             }
         });
 
@@ -88,12 +98,12 @@ public class OrderView extends JPanel{
         //OrderController.add
         //OrderController.Clear
 
-        CHamburger.setText("Hamburger");
-        CChicken.setText("Chicken Sandwich");
-        CPop.setText("Pop");
-        CFries.setText("Fries");
-        CCombo1.setText("Combo #1");
-        CCombo2.setText("Combo #2");
+        CHamburger.setText("Hamburger $5");
+        CChicken.setText("Chicken Sandwich $6");
+        CPop.setText("Pop $2");
+        CFries.setText("Fries $1");
+        CCombo1.setText("Combo #1 $6");
+        CCombo2.setText("Combo #2 $7");
 
         Badd.setText("Add");
         Bclear.setText("Clear");
